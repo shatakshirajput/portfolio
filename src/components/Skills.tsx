@@ -1,29 +1,9 @@
 import React from 'react';
 import {
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiTypescript,
-  SiBootstrap,
-  SiReact,
-  SiTailwindcss,
-  SiMui,
-  SiNodedotjs,
-  SiExpress,
-  SiSupabase,
-  SiFirebase,
-  SiDjango,
-  SiFlask,
-  SiGit,
-  SiGithub,
-  SiVscodium,
-  SiFigma,
-  SiRender,
-  SiNetlify,
-  SiOpenjdk,
-  SiPython,
-  SiPhp,
-  SiMysql,
+  SiHtml5, SiCss3, SiJavascript, SiTypescript, SiBootstrap, SiReact,
+  SiTailwindcss, SiMui, SiNodedotjs, SiExpress, SiSupabase, SiFirebase,
+  SiDjango, SiFlask, SiGit, SiGithub, SiVscodium, SiFigma, SiRender,
+  SiNetlify, SiOpenjdk, SiPython, SiPhp, SiMysql,
 } from "react-icons/si";
 
 interface Skill {
@@ -69,64 +49,45 @@ const languageSkills: Skill[] = [
 ];
 
 const SkillBox = ({ skill }: { skill: Skill }) => (
-  <div className="flex flex-col items-center justify-center border rounded-lg p-4 shadow-md hover:shadow-xl transition duration-300 bg-white dark:bg-gray-800 text-center">
-    <div className="text-3xl text-primary mb-2">{skill.icon}</div>
+  <div className="flex flex-col items-center gap-2 p-5 bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 transform hover:-translate-y-1">
+    <div className="text-4xl text-primary drop-shadow-md">{skill.icon}</div>
     <span className="text-sm font-medium text-gray-700 dark:text-gray-200">{skill.name}</span>
   </div>
 );
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="section-title">My Skills</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 relative inline-block">
+            My <span className="text-orange-500">Skills</span>
+          </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Here are the technologies and tools I use in building full-stack web applications.
+            Tools and technologies I use to build modern and scalable applications.
           </p>
         </div>
 
-        {/* Skill Sections */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Frontend</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {frontendSkills.map((skill, index) => (
-                <SkillBox key={index} skill={skill} />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Backend</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {backendSkills.map((skill, index) => (
-                <SkillBox key={index} skill={skill} />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Others</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {otherSkills.map((skill, index) => (
-                <SkillBox key={index} skill={skill} />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-primary">Languages</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {languageSkills.map((skill, index) => (
-                <SkillBox key={index} skill={skill} />
-              ))}
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12">
+          <SkillSection title="Frontend" skills={frontendSkills} />
+          <SkillSection title="Backend" skills={backendSkills} />
+          <SkillSection title="Others" skills={otherSkills} />
+          <SkillSection title="Languages" skills={languageSkills} />
         </div>
       </div>
     </section>
   );
 };
+
+const SkillSection = ({ title, skills }: { title: string; skills: Skill[] }) => (
+  <div>
+    <h3 className="text-xl font-semibold text-primary mb-4 border-b pb-2">{title}</h3>
+    <div className="grid grid-cols-2 gap-4">
+      {skills.map((skill, index) => (
+        <SkillBox key={index} skill={skill} />
+      ))}
+    </div>
+  </div>
+);
 
 export default Skills;
