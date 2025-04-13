@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 
@@ -11,23 +10,28 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white py-10">
+    <footer className="bg-gradient-to-t from-gray-900 to-gray-800 text-white py-10 border-t border-gray-700">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <p className="text-lg font-semibold">John Doe</p>
-            <p className="text-gray-400">Web Developer & Designer</p>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          {/* Left: Branding */}
+          <div className="text-center md:text-left">
+            <h3 className="text-2xl font-bold text-primary">Shatakshi Rajput</h3>
+            <p className="text-gray-400 text-sm mt-1">Web Developer & Designer</p>
           </div>
-          
-          <div className="flex flex-col items-center md:items-end">
-            <p className="text-gray-400 mb-2">© {new Date().getFullYear()} All Rights Reserved</p>
-            <button 
+
+          {/* Right: Year + Button */}
+          <div className="flex flex-col items-center md:items-end gap-3">
+          <button
               onClick={scrollToTop}
-              className="p-3 bg-primary/20 rounded-full text-primary hover:bg-primary hover:text-white transition-colors"
+              className="p-3 bg-primary/10 rounded-full text-primary hover:bg-primary hover:text-white transition duration-300 shadow-md"
               aria-label="Scroll to top"
             >
               <ArrowUp size={20} />
             </button>
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} All Rights Reserved
+            </p>
+            
           </div>
         </div>
       </div>
