@@ -56,11 +56,14 @@ const About = () => {
     <section id="about" ref={sectionRef} className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title opacity-0 animate-on-scroll">About Me</h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto opacity-0 animate-on-scroll">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 relative inline-block">
+            About <span className="text-orange-500">Me</span>
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-4">
             Here you'll find more information about me, what I do, and my current skills
           </p>
         </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="opacity-0 animate-on-scroll">
@@ -74,7 +77,7 @@ const About = () => {
 
           <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 opacity-0 animate-on-scroll">
             <h3 className="text-2xl font-bold mb-6 text-primary">Personal Details</h3>
-            
+
             <div className="space-y-4">
               <div className="flex items-center">
                 <User className="text-accent mr-4" size={20} />
@@ -83,7 +86,7 @@ const About = () => {
                   <span className="font-medium">{aboutData.name}</span>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <Calendar className="text-accent mr-4" size={20} />
                 <div>
@@ -91,7 +94,7 @@ const About = () => {
                   <span className="font-medium">{aboutData.birthday}</span>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <MapPin className="text-accent mr-4" size={20} />
                 <div>
@@ -99,7 +102,7 @@ const About = () => {
                   <span className="font-medium">{aboutData.location}</span>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <Mail className="text-accent mr-4" size={20} />
                 <div>
@@ -107,7 +110,7 @@ const About = () => {
                   <span className="font-medium">{aboutData.email}</span>
                 </div>
               </div>
-              
+
               <div className="flex items-center">
                 <Phone className="text-accent mr-4" size={20} />
                 <div>
@@ -116,10 +119,10 @@ const About = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="mt-8">
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 className="inline-block bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-primary/90 transition-colors"
               >
                 Contact Me
