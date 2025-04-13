@@ -49,7 +49,7 @@ const Experience = () => {
             const elements = entry.target.querySelectorAll('.timeline-item');
             elements.forEach((el, index) => {
               setTimeout(() => {
-                el.classList.add('animate-fadeIn');
+                el.classList.add('animate-fadeInUp');
               }, index * 200);
             });
           }
@@ -70,69 +70,56 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="education" ref={sectionRef} className="py-20">
+    <section id="education" ref={sectionRef} className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title">Education</h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 relative inline-block">
+            Educati<span className="text-orange-500">on</span>
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-2">
             My academic background and ongoing learning journey
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute inset-0 flex justify-center">
-              <div className="w-px h-full bg-primary/30"></div>
-            </div>
+        <div className="relative max-w-5xl mx-auto">
+          {/* Vertical line in the center */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-dashed border-primary/30"></div>
 
-            {/* Timeline items */}
-            <div className="relative">
-              {timelineData.map((item, index) => (
-                <div 
-                  key={item.id} 
-                  className={`timeline-item mb-10 flex opacity-0 ${
-                    index % 2 === 0 ? 'justify-start' : 'justify-end'
-                  } relative`}
-                >
-                  {/* Timeline marker */}
-                  <div className="absolute left-1/2 -translate-x-1/2 -mt-1">
-                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
-                      <GraduationCap size={18} />
-                    </div>
-                  </div>
-
-                  {/* Timeline content */}
-                  <div 
-                    className={`w-5/12 ${
-                      index % 2 === 0 ? 'mr-auto pr-8' : 'ml-auto pl-8'
-                    }`}
-                  >
-                    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover-card">
-                      <span className="text-sm font-medium text-primary block mb-1">
-                        {item.date}
-                      </span>
-                      <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                      <p className="text-lg text-gray-700 dark:text-gray-300 mb-3">
-                        {item.organization}
-                      </p>
-                      <p className="text-gray-600 dark:text-gray-400 mb-3">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
+          {/* Timeline Items */}
+          {timelineData.map((item, index) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <div
+                key={item.id}
+                className={`timeline-item mb-12 flex justify-between items-center w-full ${isLeft ? 'flex-row' : 'flex-row-reverse'
+                  }`}
+              >
+                {/* Card */}
+                <div className="w-5/12 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+                  <span className="text-sm font-semibold text-primary block mb-1">{item.date}</span>
+                  <h3 className="text-xl font-bold mb-1 text-gray-800 dark:text-white">{item.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 font-medium mb-2">{item.organization}</p>
+                  <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
                 </div>
-              ))}
-            </div>
-          </div>
 
-          <div className="text-center mt-12">
-            <Button asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                Download Resume
-              </a>
-            </Button>
-          </div>
+                {/* Marker */}
+                <div className="z-10 flex items-center justify-center w-10 h-10 bg-white dark:bg-gray-900 border-2 border-primary rounded-full shadow-md">
+                  <GraduationCap className="text-primary" size={20} />
+                </div>
+
+                {/* Empty div to push opposite side content */}
+                <div className="w-5/12" />
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button asChild>
+            <a href="/public/ShatakshiRajputResume (1).pdf" download>
+              Download Resume
+            </a>
+          </Button>
         </div>
       </div>
     </section>
