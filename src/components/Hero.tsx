@@ -72,7 +72,7 @@ const Hero = () => {
           <div className="w-full md:w-2/5 flex justify-center md:justify-end opacity-0 animate-fadeIn" style={{ animationDelay: '1.5s' }}>
             <div className="relative w-[26rem] aspect-square rounded-full overflow-hidden border-4 border-white/30 shadow-xl bg-white/10">
               <img
-                src="/WhatsApp Image 2025-04-13 at 19.58.06 (1).jpeg"
+                src="/profile.jpeg"
                 alt="Shatakshi Rajput"
                 className="w-full h-full object-cover object-center"
               />
