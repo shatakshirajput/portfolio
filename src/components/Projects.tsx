@@ -15,7 +15,7 @@ const projects: Project[] = [
     title: "Wandrovia (Airbnb Clone)",
     description:
       "A full-stack booking platform inspired by Airbnb with search, filters, bookings, and payments. Built using React, Tailwind, Node.js, and MongoDB.",
-    image: "/public/wanderlust.jpg",
+    image: "/wanderlust.jpg",
     techStack: ["React", "Tailwind", "Node.js", "MongoDB"],
     link: "https://wandrovia.vercel.app",
     github: "https://github.com/yourusername/wandrovia",
@@ -24,7 +24,7 @@ const projects: Project[] = [
     title: "AI-Powered Interior Designer",
     description:
       "Smart room design tool with image upload, furniture placement using AI (YOLO), and a 3D room view using Three.js. Supports suggestions and style matching.",
-    image: "/public/roomify.png",
+    image: "/roomify.png",
     techStack: ["React", "Flask", "YOLO", "Three.js", "MongoDB"],
     github: "https://github.com/yourusername/interior-designer",
   },
@@ -32,7 +32,7 @@ const projects: Project[] = [
     title: "Online Coding Platform",
     description:
       "Leetcode-like online coding platform with real-time code editor, question sets, code evaluation via Docker backend and leaderboard.",
-    image: "/public/codeEditor.png",
+    image: "/codeEditor.png",
     techStack: ["React", "Express", "MongoDB", "Docker", "Monaco Editor"],
     github: "https://github.com/yourusername/online-coding-platform",
   },
@@ -40,7 +40,7 @@ const projects: Project[] = [
     title: "Expense Tracker",
     description:
       "A responsive expense tracking web app with charts, budgets, categories and authentication. Built with MERN stack.",
-    image: "/public/expenseTracker.png",
+    image: "/expenseTracker.png",
     techStack: ["React", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/yourusername/expense-tracker",
   },
@@ -48,7 +48,7 @@ const projects: Project[] = [
     title: "Blogging Platform",
     description:
       "Minimal blogging platform where users can post, edit and delete blogs. Includes Markdown support and authentication.",
-    image: "/public/blog.png",
+    image: "/blog.png",
     techStack: ["Next.js", "TypeScript", "MongoDB", "TailwindCSS"],
     github: "https://github.com/yourusername/blogging-platform",
   },
